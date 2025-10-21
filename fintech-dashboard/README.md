@@ -1,5 +1,7 @@
 # FinTech Dashboard & Predictive Analytics
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fintech-dashboard-predictive-analytics.streamlit.app/)
+
 This project is a comprehensive platform for visualizing financial data and leveraging machine learning to generate predictive insights. The interactive dashboard, built with Streamlit, provides users with tools to analyze market trends, assess risk, and make data-driven decisions using historical stock data and predictive models.
 
 ---
