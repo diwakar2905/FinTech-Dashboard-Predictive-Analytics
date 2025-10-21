@@ -133,16 +133,29 @@ if data is not None:
         y = data_ml['Target']
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, shuffle=False)
 
-        if not X_train.empty and not X_test.empty:
-            model = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
-            model.fit(X_train, y_train)
-            y_pred = model.predict(X_test)
-            accuracy = accuracy_score(y_test, y_pred)
-            st.write(f"Random Forest Directional Accuracy: **{accuracy*100:.2f}%**")
-            joblib.dump(model, os.path.join(MODELS_DIR, f'{selected_ticker}_rf_model.pkl'))
+        model_path = os.path.join(MODELS_DIR, f'{selected_ticker}_rf_model.pkl')
+
+        # --- Load or Train Model ---
+        if not os.path.exists(model_path):
+            st.info(f"Training model for {selected_ticker} for the first time. This may take a moment...")
+            if not X_train.empty:
+                model = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
+                model.fit(X_train, y_train)
+                joblib.dump(model, model_path)
+            else:
+                st.warning("Not enough training data to create a model.")
+                model = None
+        else:
+            model = joblib.load(model_path)
+
+        if model:
+            # Note: Accuracy on a historical test set is not a "confidence" for a future prediction.
+            # It's a measure of how well the model performed in the past.
+            accuracy = accuracy_score(y_test, model.predict(X_test))
+            st.write(f"Model Accuracy on Historical Test Data: **{accuracy*100:.2f}%**")
             last_prediction = model.predict(X.iloc[[-1]])[0]
             prediction_text = "Up (Bullish) 🟢" if last_prediction == 1 else "Down (Bearish) 🔴"
-            st.metric("Next Day Price Direction Forecast", prediction_text, delta=f"Confidence: {accuracy*100:.2f}%")
+            st.metric("Next Day Price Direction Forecast", prediction_text)
         else:
             st.warning("Not enough data for model training after splitting.")
     else:
