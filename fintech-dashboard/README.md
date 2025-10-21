@@ -24,7 +24,6 @@ In the fast-paced world of finance, timely and accurate data analysis is crucial
 
 - **Visualize** historical stock performance and key technical indicators.
 - **Analyze** market trends and volatility.
-- **Forecast** future price movements using time-series models like ARIMA.
 - **Assess** potential credit risk or detect fraudulent activities through integrated machine learning models.
 
 ---
@@ -50,7 +49,7 @@ In the fast-paced world of finance, timely and accurate data analysis is crucial
 - **Data Manipulation**: Pandas, NumPy
 - **Machine Learning**: Scikit-learn, Keras
 - **Data Fetching**: yfinance
-- **Financial Modeling**: arch (for GARCH), pmdarima
+- **Financial Modeling**: arch (for GARCH)
 - **Technical Analysis**: ta
 - **Data Visualization**: Plotly, Matplotlib, Seaborn
 
