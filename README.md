@@ -4,6 +4,13 @@
 
 This project is a comprehensive platform for visualizing financial data and leveraging machine learning to generate predictive insights. The interactive dashboard, built with Streamlit, provides users with tools to analyze market trends, assess risk, and make data-driven decisions using historical stock data and predictive models.
 
+<img width="1882" height="919" alt="image" src="https://github.com/user-attachments/assets/5acfbbe0-4e71-45be-b2c5-98d63647bfbe" />
+<img width="1899" height="889" alt="image" src="https://github.com/user-attachments/assets/fe808ad4-886b-45d8-b603-0da470bdb89b" />
+<img width="1909" height="823" alt="image" src="https://github.com/user-attachments/assets/663f6d0f-be2c-4c87-bf41-a9ee037e04db" />
+<img width="1898" height="896" alt="image" src="https://github.com/user-attachments/assets/49937df3-fad4-432b-b18b-305e4274fa9e" />
+<img width="1901" height="822" alt="image" src="https://github.com/user-attachments/assets/2b69bf3e-6891-40e0-beca-20464712adfa" />
+
+
 ---
 
 ## Table of Contents
